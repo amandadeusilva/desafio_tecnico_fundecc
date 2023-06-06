@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Usuário</title>
+    
+</head>
+<body>
+    <h1>Editar Usuário</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{ usuario.nome }}" required><br>
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" value="{{ usuario.idade }}" required><br>
+        <label for="sexo">Sexo:</label>
+        <input type="text" id="sexo" name="sexo" value="{{ usuario.sexo }}" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ usuario.email }}" required><br>
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" value="{{ usuario.telefone }}" required><br>
+        <label for="pais">País:</label>
+        <input type="text" id="pais" name="pais" value="{{ usuario.pais }}" required><br>
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado" value="{{ usuario.estado }}" required><br>
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" value="{{ usuario.cidade }}" required><br>
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" name="bairro" value="{{ usuario.bairro }}" required><br>
+        <label for="logradouro">Logradouro:</label>
+        <input type="text" id="logradouro" name="logradouro" value="{{ usuario.logradouro }}" required><br>
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="True" {% if usuario.status %}selected{% endif %}>Ativo</option>
+            <option value="False" {% if not usuario.status %}selected{% endif %}>Inativo</option>
+        </select><br>
+        <label for="grupo">Grupo:</label>
+        <select id="grupo" name="grupo" required>
+           
+            <option value="{{ grupo.id }}" {% if grupo.id == usuario.grupo.id %}selected{% endif %}>{{ grupo.titulo }}</option>
+           
+        </select><br>
+        <input type="submit" value="Salvar">
+    </form>
+</body>
+</html>

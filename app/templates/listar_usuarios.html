@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listar Usuários</title>
+</head>
+<body>
+    <h1>Listar Usuários</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Sexo</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>País</th>
+            <th>Estado</th>
+            <th>Cidade</th>
+            <th>Bairro</th>
+            <th>Logradouro</th>
+            <th>Status</th>
+            <th>Grupo</th>
+            <th>Ações</th>
+        </tr>
+
+        <tr>
+            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.nome }}</td>
+            <td>{{ usuario.idade }}</td>
+            <td>{{ usuario.sexo }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>{{ usuario.telefone }}</td>
+            <td>{{ usuario.pais }}</td>
+            <td>{{ usuario.estado }}</td>
+            <td>{{ usuario.cidade }}</td>
+            <td>{{ usuario.bairro }}</td>
+            <td>{{ usuario.logradouro }}</td>
+            <td>{{ usuario.status }}</td>
+            <td>{{ usuario.grupo }}</td>
+            <td>
+                
+            </td>
+        </tr>
+    </table>
+    <a href="{% url 'cadastrar_usuario' %}">Cadastrar Usuário</a>
+</body>
+</html>

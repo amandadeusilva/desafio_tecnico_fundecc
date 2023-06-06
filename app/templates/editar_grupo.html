@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Grupo</title>
+</head>
+<body>
+    <h1>Editar Grupo</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" value="{{ grupo.titulo }}" required><br>
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" required>{{ grupo.descricao }}</textarea><br>
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="True" {% if grupo.status %}selected{% endif %}>Ativo</option>
+            <option value="False" {% if not grupo.status %}selected{% endif %}>Inativo</option>
+        </select><br>
+        <input type="submit" value="Salvar">
+    </form>
+</body>
+</html>
